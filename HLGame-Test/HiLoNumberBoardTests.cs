@@ -27,6 +27,14 @@ namespace HLGame_Test
             Assert.True(board.Numbers.Length > 0);
         }
 
+        [Fact]
+        public void HiLoNumberBoard_Should_Have_One_Number_Revealead()
+        {
+            var board = new HiLoNumbersBoard(generator);
+
+            Assert.Single(board.RevealedNumbers);
+        }
+
 
 
 
