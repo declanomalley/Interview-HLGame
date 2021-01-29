@@ -17,6 +17,33 @@ namespace HLGame_Test
             Assert.Equal(10,numbers.Length);
         }
 
-       
+
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(4)]
+        [InlineData(5)]
+        [InlineData(6)]
+        [InlineData(7)]
+        [InlineData(8)]
+        [InlineData(9)]
+        [InlineData(10)]
+        [InlineData(11)]
+        [InlineData(12)]
+        public void Numbers_Differ(int Count)
+        {
+            var generator = new NumberGenerator_RandomNumbers_DifferFromPrevious();
+            var numbers = generator.Generate(Count);
+
+            var previousnumber = -1;
+            foreach (var number in numbers)
+            {
+                Assert.NotEqual(previousnumber, number);
+                previousnumber = number;
+            }
+        }
+
+
     }
 }
