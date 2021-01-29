@@ -64,6 +64,27 @@ namespace HLGame_Test
             }
         }
 
+        [Fact]
+        public void HiLoGame_NumberBoard_Guess_Some_Answers()
+        {
+            var Board = new HiLoNumbersBoard(NumberGenerator);
+            var Game = new HiLoGuessGame(dbContext, Board);
+            var random = new Random();
+            var triesbeforefail = random.Next(1, 9);
+            for (int i = 0; i < NumberOfRounds; i++)
+            {
+                if (i == triesbeforefail)
+                {
+                    Assert.False(Game.Guess(Game.NumbersBoard.NextNumber() < Game.NumbersBoard.CurrentNumber()));
+                    return;
+                }
+                else
+                {
+                    Assert.True(Game.Guess(Game.NumbersBoard.NextNumber() > Game.NumbersBoard.CurrentNumber()));
+                }
+            }
+        }
+
 
     }
 }
