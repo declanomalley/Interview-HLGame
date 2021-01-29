@@ -32,9 +32,7 @@ namespace HLGame.Controllers
             Game = GetGameFromSession();
             if (Game == null)
             {
-                var NumberGenerator = new NumberGenerator_RandomNumbers_DifferFromPrevious();
-                var NumberBoard = new HiLoNumbersBoard(NumberGenerator);
-                Game = new HiLoGuessGame(_dbContext, NumberBoard);
+                Game = NewGame();
             }
 
             // dont want to pass model to page as it will reveleal the numbers
@@ -45,10 +43,23 @@ namespace HLGame.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(HiLoGuessGame Game)
+        public IActionResult Index(string submit)
         {
-            Game = GetGameFromSession();
-            Game.Guess(true);
+            var Game = GetGameFromSession();
+
+            switch (submit)
+            {
+                case "higher":
+                    Game.Guess(true);
+                    break;
+                case "lower":
+                    Game.Guess(false);
+                    break;
+                case "reset":
+                    Game = NewGame();
+                    break;
+            }
+            
             SaveGameToSession(Game);
 
             return View(Game);
@@ -78,6 +89,13 @@ namespace HLGame.Controllers
             var serialisedDate = JsonConvert.SerializeObject(Game, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
             HttpContext.Session.SetString(gameData, serialisedDate);
             return true;
+        }
+
+        private HiLoGuessGame NewGame()
+        {
+            var NumberGenerator = new NumberGenerator_RandomNumbers_DifferFromPrevious();
+            var NumberBoard = new HiLoNumbersBoard(NumberGenerator);
+            return new HiLoGuessGame(_dbContext, NumberBoard);
         }
     }
 }

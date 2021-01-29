@@ -82,8 +82,14 @@ namespace HLGame.Models.Game
 
             if (Correct)
                 Score += 1;
+            else
+            {
+                State = eState.GameOver;
+            }
 
-            NumbersBoard.MoveToNextNumber();
+
+            if (!NumbersBoard.MoveToNextNumber())
+                State = eState.Success;
 
             
         }
