@@ -25,6 +25,12 @@ namespace HLGame.Models
             RevealedNumbers.Add(Numbers[0]);
         }
 
+        public NumbersBoard(int[] numbers, int Score)
+        {
+            this.Numbers = numbers;
+            RevealedNumbers = Numbers.ToList().Take(Score).ToList();
+        }
+
         private int[] Generate()
         {
             if (generator == null)
@@ -44,7 +50,10 @@ namespace HLGame.Models
 
         }
 
+        public HiLoNumbersBoard(int[] numbers, int index) : base(numbers, index)
+        {
 
+        }
 
     }
 }
