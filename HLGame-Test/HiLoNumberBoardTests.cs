@@ -35,6 +35,14 @@ namespace HLGame_Test
             Assert.Single(board.RevealedNumbers);
         }
 
+        [Fact]
+        public void HiLoNumberBoard_Should_Change_Number_NextNumber()
+        {
+            var board = new HiLoNumbersBoard(generator);
+
+            Assert.NotEqual(board.NextNumber(), board.CurrentNumber());
+        }
+
 
 
 
