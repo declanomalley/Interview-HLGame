@@ -26,7 +26,7 @@ namespace HLGame_Test
 
 
         [Fact]
-        public void HiLoGame__NumberBoard_Should_Change_On_Correct_Answer()
+        public void HiLoGame_NumberBoard_Should_Change_On_Correct_Answer()
         {
             bool validated = false;
             
@@ -51,6 +51,19 @@ namespace HLGame_Test
             }
         }
 
-    
+        [Fact]
+        public void HiLoGame_NumberBoard_All_Correct_Answers()
+        {
+            var Board = new HiLoNumbersBoard(NumberGenerator);
+            var Game = new HiLoGuessGame(dbContext, Board);
+
+
+            for (int i = 0; i <= NumberOfRounds; i++)
+            {
+                Assert.True(Game.Guess(Game.NumbersBoard.NextNumber() > Game.NumbersBoard.CurrentNumber()));
+            }
+        }
+
+
     }
 }
