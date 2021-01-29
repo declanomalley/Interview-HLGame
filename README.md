@@ -1,5 +1,12 @@
 # HL-Game
 
+## TODO
+
+add unit tests for saving high score
+add unit test for retrieving high score
+display highscore on board
+capture name and fill hiddenfield
+
 ## The Game
 
 Generate a random number between 1-100 and show it to the user
