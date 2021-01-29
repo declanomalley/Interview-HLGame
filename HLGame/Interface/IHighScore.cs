@@ -8,7 +8,7 @@ namespace HLGame.Interface
     public interface IHighScore
     {
         public int GameID { get; set; }
-        public int Name { get; set; }
+        public string Name { get; set; }
         public TimeSpan Time { get; set; }
         public int Score { get; set; }
     }
