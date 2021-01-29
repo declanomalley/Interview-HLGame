@@ -1,6 +1,6 @@
 # HL-Game
 
-##The Game
+## The Game
 
 Generate a random number between 1-100 and show it to the user
 
@@ -22,7 +22,7 @@ Use the time to split equal scores – faster is better
 
 The high scores should be persisted, so they are available every time the game is run
 
-##Notes
+## Notes
 
 This exercise is expected to take between 2-4 hours to complete. If you run out of time then add notes into a readme file so we can see where you wanted to go with it
 
@@ -36,6 +36,6 @@ A UI is not necessary but will earn extra kudos, although a console app is fine 
 
 On the first run there will be no high score list
 
-##Submission
+## Submission
 
 The solution should be written in either C# or Angular
