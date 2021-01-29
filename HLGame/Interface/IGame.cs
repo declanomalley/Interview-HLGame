@@ -13,15 +13,16 @@ namespace HLGame.Interface
 
     public interface IGame
     {
-        
-        public IUser User { get; set; }
-        public int ID { get; set; }
-        public int[] Numbers { get; set; }
-        public int Score { get; set; }
 
-        public INumbersBoard NumbersBoard { get; }
+        int ID { get; set; }
+        string Name { get; set; }
+        int[] Numbers { get; set; }
+        INumbersBoard NumbersBoard { get; set; }
+        int Score { get; set; }
 
-        
+        bool End(eState state);
+
+
     }
 
 
