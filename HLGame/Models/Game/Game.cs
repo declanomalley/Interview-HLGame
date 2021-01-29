@@ -91,7 +91,18 @@ namespace HLGame.Models.Game
 
 
             if (!NumbersBoard.MoveToNextNumber())
+            {
                 State = eState.Success;
+                var HighScore = new HighScore()
+                {
+                    Name = Name,
+                    Score = Score,
+                    Time = DateTime.Now.Subtract(StartDate),
+                    GameID = 0
+                };
+
+                _db.SaveHighScore(HighScore);
+            }
 
             
         }
