@@ -73,10 +73,17 @@ namespace HLGame.Models.Game
 
         protected void ValidateAnswer(bool Correct)
         {
+            if (State != eState.Active)
+            {
+                return;
+            }
+
             if (Correct)
                 Score += 1;
 
             NumbersBoard.MoveToNextNumber();
+
+            
         }
 
         public abstract bool Guess(AnswerType Answer);
