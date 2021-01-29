@@ -3,3 +3,7 @@
 ################################################################################
 
 /HLGame/bin/Debug/netcoreapp3.1
+/.vs/HLGame/v16
+/HLGame/obj/Debug/netcoreapp3.1
+/HLGame/obj
+/.vs/HLGame/DesignTimeBuild
