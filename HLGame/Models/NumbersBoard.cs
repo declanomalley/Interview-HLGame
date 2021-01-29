@@ -16,7 +16,8 @@ namespace HLGame.Models
         public int[] Numbers { get; set; }
 
         public List<int> RevealedNumbers { get; set; }
-
+        public NumbersBoard() {
+        }
         public NumbersBoard(INumberGenerator Generator)
         {
             generator = Generator;
@@ -67,7 +68,7 @@ namespace HLGame.Models
 
     public class HiLoNumbersBoard : NumbersBoard
     {
-
+        public HiLoNumbersBoard(){ }
         public HiLoNumbersBoard(INumberGenerator generator) : base(generator)
         {
 

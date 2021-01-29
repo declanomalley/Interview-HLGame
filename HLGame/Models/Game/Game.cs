@@ -29,6 +29,8 @@ namespace HLGame.Models.Game
             set { _numbersBoard = value; }
         }
 
+        public GuessGame() { }
+
         public GuessGame(IDBContext db, INumbersBoard board)
         {
             _db = db;

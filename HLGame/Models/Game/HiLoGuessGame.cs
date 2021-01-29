@@ -8,7 +8,7 @@ namespace HLGame.Models.Game
 {
     public class HiLoGuessGame : GuessGame<bool>
     {
-
+        public HiLoGuessGame() { }
         public HiLoGuessGame(IDBContext db, INumbersBoard board) : base(db, board) { }
 
         public HiLoGuessGame(IDBContext db, INumbersBoard board, int id) : base(db, board, id) { }
