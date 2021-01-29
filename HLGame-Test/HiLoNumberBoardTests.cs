@@ -12,7 +12,12 @@ namespace HLGame_Test
         INumberGenerator generator;
         private const int NumberOfRounds = 10;
 
-        
+        public HiLoNumberBoardTests()
+        {
+            generator = new NumberGenerator_RandomNumbers_DifferFromPrevious();
+        }
+
+
 
         [Fact]
         public void HiLoNumberBoard_Has_Numbers_Generated()
@@ -22,6 +27,8 @@ namespace HLGame_Test
             Assert.True(board.Numbers.Length > 0);
         }
 
-       
+
+
+
     }
 }
