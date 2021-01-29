@@ -10,6 +10,9 @@ namespace HLGame.Interface
         int[] Numbers { get; set; }
         List<int> RevealedNumbers { get; set; }
 
+        int CurrentNumber();
+        bool MoveToNextNumber();
+        int NextNumber();
 
     }
 }
