@@ -29,6 +29,8 @@ namespace HLGame.Models.Game
             set { _numbersBoard = value; }
         }
 
+        public DateTime StartDate { get; set ; }
+
         public GuessGame() { }
 
         public GuessGame(IDBContext db, INumbersBoard board)
