@@ -11,6 +11,7 @@ namespace HLGame.Models.Game
     public abstract class GuessGame<AnswerType> : IGame,IGuess<AnswerType>, ICRUD
     {
         private const int NumberOfRounds = 10;
+        private const int PointsAwarded = 1;
 
         IDBContext _db;
 
@@ -75,6 +76,11 @@ namespace HLGame.Models.Game
             this.Score = dbGame.Score;
         }
 
+        private void AddToScore()
+        {
+            Score += PointsAwarded;
+        }
+
         protected void ValidateAnswer(bool Correct)
         {
             if (State != eState.Active)
@@ -83,7 +89,7 @@ namespace HLGame.Models.Game
             }
 
             if (Correct)
-                Score += 1;
+                AddToScore();
             else
             {
                 State = eState.GameOver;
