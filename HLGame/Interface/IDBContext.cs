@@ -13,6 +13,6 @@
     public interface IDBHighScore
     {
         public IHighScore[] GetHighScores();
-        public bool SaveHighScore();
+        public bool SaveHighScore(IHighScore Score);
     }
 }
