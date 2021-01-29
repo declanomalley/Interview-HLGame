@@ -6,6 +6,7 @@
 * add unit test for retrieving high score
 * display highscore on board
 * capture name and fill hiddenfield
+* display when game complete based on state
 
 ## The Game
 
