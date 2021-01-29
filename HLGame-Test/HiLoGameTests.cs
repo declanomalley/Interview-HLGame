@@ -1,5 +1,6 @@
 ﻿using HLGame.Interface;
 using HLGame.Models;
+using HLGame.Models.Game;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,7 +26,7 @@ namespace HLGame_Test
 
 
         [Fact]
-        public void HiLoNumberBoard_Current_Number_Should_Change_On_Correct_Answer()
+        public void HiLoGame__NumberBoard_Should_Change_On_Correct_Answer()
         {
             bool validated = false;
             
