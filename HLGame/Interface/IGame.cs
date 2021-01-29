@@ -20,6 +20,8 @@ namespace HLGame.Interface
         INumbersBoard NumbersBoard { get; set; }
         int Score { get; set; }
 
+        DateTime StartDate { get; set; }
+
         bool End(eState state);
 
 
