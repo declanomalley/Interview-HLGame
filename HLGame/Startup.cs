@@ -29,6 +29,7 @@ namespace HLGame
             services.AddMvc().AddRazorRuntimeCompilation();
 
             services.AddScoped<IDBContext, DbContext>();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +49,8 @@ namespace HLGame
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseSession();
 
             app.UseAuthorization();
 
