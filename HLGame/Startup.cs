@@ -1,3 +1,5 @@
+using HLGame.Interface;
+using HLGame.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +27,8 @@ namespace HLGame
         {
             services.AddControllersWithViews();
             services.AddMvc().AddRazorRuntimeCompilation();
+
+            services.AddScoped<IDBContext, DbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +52,8 @@ namespace HLGame
             app.UseAuthorization();
 
             
+
+
 
             app.UseEndpoints(endpoints =>
             {
