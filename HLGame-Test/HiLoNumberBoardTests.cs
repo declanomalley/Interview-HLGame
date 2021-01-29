@@ -43,6 +43,34 @@ namespace HLGame_Test
             Assert.NotEqual(board.NextNumber(), board.CurrentNumber());
         }
 
+        [Fact]
+        public void HiLoNumberBoard_Should_Change_Number_NextNumber_MoveToNextNumber()
+        {
+            var board = new HiLoNumbersBoard(generator);
+
+            while (board.NextNumber() > -1)
+            {
+                board.MoveToNextNumber();
+
+                Assert.NotEqual(board.NextNumber(), board.CurrentNumber());
+            }
+        }
+
+        [Fact]
+        public void HiLoNumberBoard_Should_Have_Ten_Answers_Revelead()
+        {
+            var board = new HiLoNumbersBoard(generator);
+
+            bool HasNumber = false;
+            do
+            {
+                HasNumber = board.MoveToNextNumber();
+            } while (HasNumber);
+
+
+            Assert.Equal(NumberOfRounds, board.RevealedNumbers.Count);
+        }
+
 
 
 

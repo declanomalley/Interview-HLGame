@@ -39,7 +39,30 @@ namespace HLGame.Models
             return generator.Generate(_numberOfRounds);
         }
 
-      
+        public int NextNumber()
+        {
+            if ((RevealedNumbers.Count) >= Numbers.Length)
+                return -1;
+
+            return Numbers[RevealedNumbers.Count];
+
+        }
+
+        public bool MoveToNextNumber()
+        {
+            var nextNumber = NextNumber();
+            if (nextNumber == -1)
+                return false;
+
+            RevealedNumbers.Add(nextNumber);
+
+            return true;
+        }
+
+        public int CurrentNumber()
+        {
+            return RevealedNumbers.Last();
+        }
     }
 
     public class HiLoNumbersBoard : NumbersBoard
