@@ -2,10 +2,10 @@
 
 ## TODO
 
-add unit tests for saving high score
-add unit test for retrieving high score
-display highscore on board
-capture name and fill hiddenfield
+* add unit tests for saving high score
+* add unit test for retrieving high score
+* display highscore on board
+* capture name and fill hiddenfield
 
 ## The Game
 
