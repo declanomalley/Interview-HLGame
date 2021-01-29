@@ -1,5 +1,6 @@
 ﻿using HLGame.Interface;
 using HLGame.Models;
+using HLGame.Models.Game;
 using System;
 using System.Collections.Generic;
 using System.Text;
