@@ -24,8 +24,11 @@ namespace HLGame.Controllers
 
         public IActionResult Index()
         {
+            var NumberGenerator = new NumberGenerator_RandomNumbers_DifferFromPrevious();
+            var NumberBoard = new HiLoNumbersBoard(NumberGenerator);
+            var Game = new HiLoGuessGame(_dbContext, NumberBoard);
 
-            return View();
+            return View(Game);
         }
 
         public IActionResult Privacy()
