@@ -29,7 +29,7 @@
 
     bool DisableButtons()
     {
-        if (Model.State == HLGame.Interface.IGameState.eState.GameOver)
+        if (Model.State == HLGame.Interface.IGameState.eState.GameOver || Model.State == HLGame.Interface.IGameState.eState.Success)
         {
             return true;
         }
